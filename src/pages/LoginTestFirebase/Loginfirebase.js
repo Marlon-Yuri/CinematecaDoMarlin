@@ -154,6 +154,9 @@ const Login = async () =>{
 
 const Deslogar = async () =>{
   await firebase.auth().signOut()
+  setEmail('')
+  setNome('')
+  setSenha('')
   alert('Deslogado')
 }
 
@@ -201,7 +204,7 @@ checkLogin()
             <button onClick={() =>{Deslogar()}}>Logout</button>
         </BoxBtn>
         <div>
-            {Object.keys(userData).length > 0 && <Welcome>Bom te ver por aqui novamente {userData.nome}</Welcome>}
+            {Object.keys(userData).length > 0 && <Welcome>Bom te ver por aqui {userData.nome}</Welcome>}
         </div>
         </Card>
     </Container>
